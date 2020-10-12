@@ -1,4 +1,4 @@
-class Todos
+class Todo
   # positional argument, access through hash
   # def initialize(todos)
   #   @id = todos[:id]
@@ -6,31 +6,26 @@ class Todos
   #   @done = todos[:done]
 
   attr_reader :id, :name, :done
-  def initialize(id: nil, name: "no name", done: false) # defaults
+  def initialize(id: nil, name: 'no name', done: false)
     @id = id
     @name = name
     @done = done
   end
 
-  def self.all
+  def self.all 
     [
       {
         id: 1,
-        name: 'Walk the dog',
+        name: "Walk the dog",
         done: false
       },
       {
         id: 2,
-        name: 'Homework',
+        name: "Do homework",
         done: true
-      },
-      {
-        id: 3,
-        name: 'Cook diner',
-        done: false
       }
     ].map do |item|
-      Todos.new(item)
+      Todo.new(item)
     end
   end
 end
