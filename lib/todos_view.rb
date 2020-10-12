@@ -1,16 +1,18 @@
 class TodosViews
   def index(todos) 
+    puts
     todos.each do |todo|
       puts "#{todo.id}. #{todo.name}"
     end 
   end
 
   def completed(todo)
-    puts todo.done ? "Completed ✅" : "Not Completed ❌"
+    puts todo.done ? "Completed" : "Not Completed"
   end
 
   def completed_input
-    puts "What todo would you like to check if its been completed?"
+    puts
+    puts "What todo would you like to check?"
     input
   end
 
@@ -20,7 +22,9 @@ class TodosViews
   end
   
   def menu 
+    puts
     puts "Welcome to the todos app!"
+    puts "--------------------------"
     puts "Make your selection"
     puts "1. View all todos"
     puts "2. Is the todo done?"
@@ -28,7 +32,7 @@ class TodosViews
   end
 
   def handle_input_error
-    puts "Input error! ❌"
-    puts "You need to input a 1, 2 or 3"
+    puts "Input error!"
+    puts "Please enter a 1, 2 or 3"
   end
 end
